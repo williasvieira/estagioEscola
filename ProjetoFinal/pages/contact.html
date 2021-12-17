@@ -36,10 +36,13 @@
             crossorigin="anonymous"
         ></script>
         <link rel="stylesheet" href="/ProjetoFinal/css/styles.css" />
-    </head>
+		<link rel="stylesheet" href="/ProjetoFinal/css/stylesContact.css">
+		<script src="/ProjetoFinal/js/validarform.js" defer></script>
+	</head>
+
     <body>
         <nav
-            class="navbar navbar-expand-lg fixed-top bg-primary-color"
+            class="navbar navbar-expand-lg  bg-primary-color"
             id="navbar"
         >
             <div class="container py-3">
@@ -98,5 +101,40 @@
                 </div>
             </div>
         </nav>
+		<div class="container" id="mainContao">
+			<form>
+				<div class="form-group">
+					<label for="exampleFormControlInput1">Nome</label>
+					<input type="email" class="form-control" id="exampleFormControlInput1">
+				</div>
+				
+				<div class="form-group">
+				  <label for="exampleFormControlInput1">Endereço de email</label>
+				  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com">
+				</div>
+				<div class="form-group">
+					<label for="exampleFormControlInput1">Assunto</label>
+					<select class="form-control" id="mySelect">
+						<option>Assuntos diversos</option>
+						<option>value1</option>
+						<option>value2</option>
+						<option>faz aquilo</option>
+						<option>faz tudo</option>
+					</select>
+				</div>
+				
+				
+				<div class="form-group">
+				  <label for="exampleFormControlTextarea1">Exemplo de textarea</label>
+				  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+				</div>
+				<div id="inputOculto">
+					<input type="text" >
+				</div>
+				<button type="submit" class="btn btn-primary">Enviar</button>
+			  </form> 
+			
+		</div>
+		
     </body>
 </html>
