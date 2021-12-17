@@ -308,6 +308,11 @@
   #links-container a:hover {
     color: #fff;
   }
+  /* Visita */
+  i.bi.visita {
+    font-size: 3em;
+  }
+  
   
   /* FOOTER BOTTOM */
   #footer-bottom {
