@@ -1,7 +1,7 @@
 <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 		
 			/*
-			 * Para efeito de demonstração, o JavaScript foi
+			 * Paradsadas efeito de demonstração, o JavaScript foi
 			 * incorporado no arquivo HTML.
 			 * O ideal é que você faça em um arquivo ".js" separado. Para mais informações
 			 * visite o endereço https://developer.yahoo.com/performance/rules.html#external
