@@ -24,6 +24,8 @@
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
             crossorigin="anonymous"
         />
+        
+    
         <!-- Bootstrap Icons -->
         <link
             rel="stylesheet"
@@ -34,8 +36,9 @@
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"
-        ></script>
-        <script type="text/javascript" src="/ProjetoFinal/js/main.js"></script>
+        >
+        </script>
+        <script src="/ProjetoFinal/js/visitForm.js" defer> </script>
         
         <link rel="stylesheet" href="/ProjetoFinal/css/styles.css" />
         />
@@ -401,29 +404,31 @@
                         </span>
                     </div>
                     <div class="col-8 col-md-7" id="idForm">
-                        <form  action="#" onSubmit="return false">
+                        <form  action="" action="" id="formulario" method="post" name="formulario" >
                             <div class="row">
                                 <div class="form-group col">
                                     <label for="exampleInputEmail1">Nome</label>
                                     <input
                                         type="text"
                                         class="form-control"
-                                        id="exampleInputEmail1"
-                                        aria-describedby="emailHelp"
-                                        placeholder="Enter email"
+                                        id="inputName"
+                                        name="nome"
+                                        required
                                     />
                                 </div>
                                 <div class="form-group col">
-                                    <label for="exampleInputEmail1"
-                                        >CPF/CNPJ</label
+                                    <label for="inputCpf"
+                                        >CPF</label
                                     >
                                     <input
-                                        type="number"
-                                        class="form-control"
-                                        id="exampleInputEmail1"
-                                        aria-describedby="emailHelp"
-                                        placeholder="Enter email"
-                                    />
+                                    class="form-control" 
+                                    id="cpf" 
+                                    type="text" 
+                                    onkeyup="cpfCheck(this)" 
+                                    maxlength="14" 
+                                    onkeydown="javascript: fMasc( this, mCPF );"> 
+                                    <span id="cpfResponse"></span>
+                                    
                                 </div>
                             </div>
                             <div class="row">
@@ -435,8 +440,8 @@
                                         type="email"
                                         class="form-control"
                                         id="exampleInputEmail1"
-                                        aria-describedby="emailHelp"
                                         placeholder="Enter email"
+                                        required
                                     />
                                     <small
                                         id="emailHelp"
@@ -455,6 +460,8 @@
                                     value="" 
                                     size="10" 
                                     maxlength="9"
+                                    required
+                                    onkeypress="mascaraCep()"
                                     
                                     />
                                     <small
@@ -499,36 +506,61 @@
                                 
                             </div>
                             <div class="row">
-                              <div class="form-group col">
-                                <label>numero</label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id=""
-                                    size="2"
-                                    name="uf"
-                                />
-                              </div>
-                              <div class="form-group col">
-                                <label>Complemento</label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id=""
-                                    size="2"
-                                    name="uf"
-                                />
-                              </div>
-                              <div class="form-group col">
-                                <label>Estado</label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="uf"
-                                    size="2"
-                                    name="uf"
-                                />
+                                <div class="form-group col">
+                                    <label>Numero</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id=""
+                                        size="2"
+                                        name="uf"
+                                    />
+                                </div>
+                                <div class="form-group col">
+                                    <label>Complemento</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id=""
+                                        size="2"
+                                        name="uf"
+                                    />
+                                </div>
+                                <div class="form-group col">
+                                    <label>Estado</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="uf"
+                                        size="2"
+                                        name="uf"
+                                    />
+                                </div>
+
                             </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label>Data</label>
+                                    <input 
+                                    class="form-control" 
+                                    type="date"
+                                    nome="date"
+                                    id="data"
+                                    min="" 
+                                    >
+
+                                </div>
+                                <div class="col">
+                                    <label>Hora</label>
+                                    <input
+                                    class="form-control"
+                                    type="time"
+                                    min="07:00"
+                                    max="17:00"
+                                    >
+                                </div>
+                                
+
                             </div>
 
                             <button type="submit" class="btn btn-primary">
@@ -657,6 +689,7 @@
                 </div>
             </div>
         </footer>
+        
         <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 		<script>
 			$("#cep").blur(function(){
